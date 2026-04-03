@@ -1,0 +1,6 @@
+bin/
+obj/
+.vs/
+.rider/
+*.user
+.DS_Store
