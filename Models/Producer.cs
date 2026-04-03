@@ -4,14 +4,37 @@ namespace eTickets.Models;
 
 public class Producer
 {
+    private Producer() { }
+
+    public Producer(string fullName, string profilePictureUrl, string bio)
+    {
+        FullName = fullName;
+        ProfilePictureURL = profilePictureUrl;
+        Bio = bio;
+        Movies = new List<Movie>();
+    }
+
     [Key]
-      public int Id { get; set; }
+    public int Id { get; private set; }
+
     [Display(Name = "Full Name")]
-    public string FullName { get; set; }
+    [Required]
+    public string FullName { get; private set; }
+
     [Display(Name = "Profile Picture URL")]
-    public string ProfilePictureURL { get; set; }
+    [Required]
+    public string ProfilePictureURL { get; private set; }
+
     [Display(Name = "Biography")]
-    public string Bio { get; set; }
-    
-    public List<Movie> Movies { get; set; } 
+    [Required]
+    public string Bio { get; private set; }
+
+    public List<Movie> Movies { get; private set; }
+
+    public void Update(string fullName, string profilePictureUrl, string bio)
+    {
+        FullName = fullName;
+        ProfilePictureURL = profilePictureUrl;
+        Bio = bio;
+    }
 }

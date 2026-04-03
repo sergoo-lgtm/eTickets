@@ -1,5 +1,4 @@
-@model Actor
-
+@model eTickets.DTO.ActorDTOS.ActorInputDto
 @{
     ViewData["Title"] = "Add a new actor";
 }
@@ -15,9 +14,9 @@
                         <img id="ProfilePicturePreview"  class="border-info rounded-circle" style="max-width: 150px" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="ProfilePivture" class="control-label"></label>
-                        <input asp-for="ProfilePivture" class="form-control" />
-                        <span asp-validation-for="ProfilePivture" class="text-danger"></span>
+                        <label asp-for="ProfilePicture" class="control-label"></label>
+                        <input asp-for="ProfilePicture" class="form-control" />
+                        <span asp-validation-for="ProfilePicture" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="FullName" class="control-label"></label>

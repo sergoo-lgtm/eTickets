@@ -6,22 +6,62 @@ namespace eTickets.Models;
 
 public class Movie
 {
+    private Movie() { }
+
+    public Movie(string name, string description, DateTime startDate, DateTime endDate, double price, string imageUrl, MovieCategory movieCategory, int cinemaId, int producerId)
+    {
+        Name = name;
+        Description = description;
+        StartDate = startDate;
+        EndDate = endDate;
+        Price = price;
+        ImageURL = imageUrl;
+        MovieCategory = movieCategory;
+        CinemaId = cinemaId;
+        ProducerId = producerId;
+        Actors_Movies = new List<Actor_Movie>();
+    }
+
     [Key]
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public double Price  { get; set; }
-    public string ImageURL { get; set; }
-    public MovieCategory MovieCategory { get; set; }
-    
-    public List<Actor_Movie> Actors_Movies { get; set; }
+    public int Id { get; private set; }
+
+    [Required]
+    public string Name { get; private set; }
+
+    [Required]
+    public string Description { get; private set; }
+
+    public DateTime StartDate { get; private set; }
+
+    public DateTime EndDate { get; private set; }
+
+    public double Price { get; private set; }
+
+    [Required]
+    public string ImageURL { get; private set; }
+
+    public MovieCategory MovieCategory { get; private set; }
+
+    public List<Actor_Movie> Actors_Movies { get; private set; }
+
     [ForeignKey("CinemaId")]
-    public int CinemaId { get; set; }
-    public Cinema Cinema { get; set; }
-    
+    public int CinemaId { get; private set; }
+    public Cinema Cinema { get; private set; }
+
     [ForeignKey("ProducerId")]
-    public int ProducerId { get; set; }
-    public Producer Producer { get; set; }
+    public int ProducerId { get; private set; }
+    public Producer Producer { get; private set; }
+
+    public void Update(string name, string description, DateTime startDate, DateTime endDate, double price, string imageUrl, MovieCategory movieCategory, int cinemaId, int producerId)
+    {
+        Name = name;
+        Description = description;
+        StartDate = startDate;
+        EndDate = endDate;
+        Price = price;
+        ImageURL = imageUrl;
+        MovieCategory = movieCategory;
+        CinemaId = cinemaId;
+        ProducerId = producerId;
+    }
 }

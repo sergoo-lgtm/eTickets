@@ -43,12 +43,7 @@ public class ActorService
 
     public async Task<ActorDto> AddActorAsync(ActorInputDto dto)
     {
-        var newActor = new Actor
-        {
-            FullName = dto.FullName,
-            ProfilePivture = dto.ProfilePicture,
-            Bio = dto.Bio
-        };
+        var newActor = new Actor(dto.FullName, dto.ProfilePicture, dto.Bio);
 
         await _unitOfWork.Actors.AddAsync(newActor);
         await _unitOfWork.SaveChangesAsync();
@@ -69,9 +64,7 @@ public class ActorService
         if (existingActor == null)
             throw new Exception("Actor not found");
 
-        existingActor.FullName = dto.FullName;
-        existingActor.ProfilePivture = dto.ProfilePicture;
-        existingActor.Bio = dto.Bio;
+        existingActor.Update(dto.FullName, dto.ProfilePicture, dto.Bio);
 
         await _unitOfWork.Actors.UpdateAsync(existingActor);
         await _unitOfWork.SaveChangesAsync();
