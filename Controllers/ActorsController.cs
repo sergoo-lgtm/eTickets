@@ -2,6 +2,7 @@ using eTickets.Models;
 using eTickets.Service;
 using eTickets.DTO.ActorDTOS; 
 using Microsoft.AspNetCore.Mvc;
+using eTickets.Middlewares; 
 
 namespace eTickets.Controllers;
 
@@ -27,13 +28,23 @@ public class ActorsController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(ActorInputDto actorDto) 
     {
-        if (!ModelState.IsValid)
+        if (!ModelState.IsValid) return View(actorDto);
+
+        try
         {
+            await _service.AddActorAsync(actorDto);
+            return RedirectToAction(nameof(Index));
+        }
+        catch (BusinessException ex)
+        {
+            ModelState.AddModelError(string.Empty, ex.Message);
+        
             return View(actorDto);
         }
-
-        await _service.AddActorAsync(actorDto);
-        
-        return RedirectToAction(nameof(Index));
+    }
+    public async Task<IActionResult> Details(int id)
+    {
+        var actor = await _service.GetActorAsync(id); 
+        return View(actor);
     }
 }
