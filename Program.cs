@@ -1,9 +1,10 @@
 using eTickets.Data;
 using eTickets.UnitOfWork;
 using eTickets.Service;
-using eTickets.Middlewares; // Add this
+using eTickets.Middlewares; 
 using Microsoft.EntityFrameworkCore;
-using Serilog; // Add this
+using Serilog; 
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,22 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ActorService>();
+builder.Services.AddScoped<AccountService>();
+builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";  
+        options.LogoutPath = "/Account/Logout";  
+        options.AccessDeniedPath = "/Account/AccessDenied";
+
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); 
+        options.SlidingExpiration = true;
+    });
+
+
 
 var app = builder.Build();
 
@@ -34,6 +51,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapStaticAssets();
 app.UseStaticFiles();
