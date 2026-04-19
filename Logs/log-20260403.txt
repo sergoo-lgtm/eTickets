@@ -1,0 +1,134 @@
+2026-04-03 17:24:48.390 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-03 17:24:48.433 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND [o].[object_id] NOT IN (SELECT [ep].[major_id]
+        FROM [sys].[extended_properties] AS [ep]
+        WHERE [ep].[minor_id] = 0
+            AND [ep].[class] = 1
+            AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-03 17:24:48.581 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cinemas] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-03 17:24:48.589 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-03 17:24:48.593 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Producers] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-03 17:24:48.597 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Movies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-03 17:24:48.601 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors_Movies] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-03 17:24:48.608 +02:00 [INF] User profile is available. Using '/Users/yousef/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-03 17:24:48.637 +02:00 [INF] Now listening on: http://localhost:5095
+2026-04-03 17:24:48.638 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-03 17:24:48.638 +02:00 [INF] Hosting environment: Development
+2026-04-03 17:24:48.638 +02:00 [INF] Content root path: /Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets
+2026-04-03 17:24:49.544 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Movies - null null
+2026-04-03 17:24:49.554 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-04-03 17:24:49.635 +02:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-03 17:24:49.640 +02:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-03 17:24:49.645 +02:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-03 17:24:49.776 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CinemaId], [m].[Description], [m].[EndDate], [m].[ImageURL], [m].[MovieCategory], [m].[Name], [m].[Price], [m].[ProducerId], [m].[StartDate], [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+ORDER BY [m].[Name]
+2026-04-03 17:24:49.863 +02:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 215.002ms.
+2026-04-03 17:24:49.871 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-03 17:24:49.984 +02:00 [INF] Executed ViewResult - view Index executed in 116.8668ms.
+2026-04-03 17:24:49.984 +02:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 343.802ms
+2026-04-03 17:24:49.985 +02:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-03 17:24:49.988 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Movies - 200 null text/html; charset=utf-8 446.933ms
+2026-04-03 17:24:50.022 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-03 17:24:50.026 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css?v=zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD-cbo - null null
+2026-04-03 17:24:50.027 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/eTickets.styles.css?v=jkamfmf9-L5C0EuQawfRWp-Bk_98XEWAAeNB0_5tyCI - null null
+2026-04-03 17:24:50.030 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/ColdSoles.jpg - null null
+2026-04-03 17:24:50.031 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/Ghost.jpg - null null
+2026-04-03 17:24:50.032 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.035 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.036 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.036 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.038 +02:00 [INF] The file images/movies/Ghost.jpg was not modified
+2026-04-03 17:24:50.038 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.039 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/Ghost.jpg - 304 null image/jpeg 7.8072ms
+2026-04-03 17:24:50.039 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.044 +02:00 [INF] The file images/movies/ColdSoles.jpg was not modified
+2026-04-03 17:24:50.045 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.045 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/ColdSoles.jpg - 304 null image/jpeg 15.1251ms
+2026-04-03 17:24:50.045 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets/obj/Debug/net10.0/compressed/03lwxah8rg-{0}-lugek5hnai-lugek5hnai.gz'
+2026-04-03 17:24:50.047 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.047 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css?v=zeR5PHeeHbxfGkL8WV86OzdoF6UnjuCmnagaocD-cbo - 200 670 text/css 20.8814ms
+2026-04-03 17:24:50.046 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: '/Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets/obj/Debug/net10.0/compressed/kun71cdkr9-{0}-q1x1xawzgi-q1x1xawzgi.gz'
+2026-04-03 17:24:50.050 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.050 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/eTickets.styles.css?v=jkamfmf9-L5C0EuQawfRWp-Bk_98XEWAAeNB0_5tyCI - 200 1093 text/css 23.9279ms
+2026-04-03 17:24:50.070 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets/obj/Debug/net10.0/compressed/6ruk69gieq-{0}-46ein0sx1k-46ein0sx1k.gz'
+2026-04-03 17:24:50.072 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.075 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/lib/bootstrap/dist/css/bootstrap.min.css - 200 232871 text/css 52.6354ms
+2026-04-03 17:24:50.089 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/life.jpg - null null
+2026-04-03 17:24:50.090 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-03 17:24:50.089 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/scoob.jpg - null null
+2026-04-03 17:24:50.089 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/Race.jpg - null null
+2026-04-03 17:24:50.090 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/js/site.js?v=y_Ngd8W21UpuCUhEqGbUKDEqFnNfTjAfb24GhJJGUyM - null null
+2026-04-03 17:24:50.095 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.096 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: '/Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets/obj/Debug/net10.0/compressed/1qr1nlk4we-{0}-fr7q2aak1r-fr7q2aak1r.gz'
+2026-04-03 17:24:50.097 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.098 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/js/site.js?v=y_Ngd8W21UpuCUhEqGbUKDEqFnNfTjAfb24GhJJGUyM - 200 260 text/javascript 7.5299ms
+2026-04-03 17:24:50.089 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/lib/jquery/dist/jquery.min.js - null null
+2026-04-03 17:24:50.096 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.100 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.101 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/TheShawshankRedemption.jpg - null null
+2026-04-03 17:24:50.097 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.096 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.102 +02:00 [INF] The file images/movies/life.jpg was not modified
+2026-04-03 17:24:50.103 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.104 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/life.jpg - 304 null image/jpeg 14.4503ms
+2026-04-03 17:24:50.102 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.103 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets/obj/Debug/net10.0/compressed/xza234c5zw-{0}-493y06b0oq-493y06b0oq.gz'
+2026-04-03 17:24:50.104 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: '/Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets/obj/Debug/net10.0/compressed/0itnpipw0u-{0}-o1o13a6vjx-o1o13a6vjx.gz'
+2026-04-03 17:24:50.102 +02:00 [INF] The file images/movies/Race.jpg was not modified
+2026-04-03 17:24:50.109 +02:00 [INF] The file images/movies/TheShawshankRedemption.jpg was not modified
+2026-04-03 17:24:50.109 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.110 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.110 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.111 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80764 text/javascript 21.4154ms
+2026-04-03 17:24:50.111 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.111 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/lib/jquery/dist/jquery.min.js - 200 87576 text/javascript 21.7962ms
+2026-04-03 17:24:50.111 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/Race.jpg - 304 null image/jpeg 21.6141ms
+2026-04-03 17:24:50.111 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.111 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/TheShawshankRedemption.jpg - 304 null image/jpeg 10.1129ms
+2026-04-03 17:24:50.113 +02:00 [INF] The file images/movies/scoob.jpg was not modified
+2026-04-03 17:24:50.113 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-03 17:24:50.113 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/scoob.jpg - 304 null image/jpeg 23.7969ms
+2026-04-03 17:24:56.761 +02:00 [INF] Application is shutting down...
