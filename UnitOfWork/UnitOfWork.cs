@@ -16,14 +16,12 @@ namespace eTickets.UnitOfWork
             Cinemas = new GenericRepository<Cinema>(_context);
             Producers = new GenericRepository<Producer>(_context);
             Movies = new GenericRepository<Movie>(_context);
-            Users = new GenericRepository<AppUser>(_context);
         
         }
         public IGenericRepository<Actor> Actors { get; }
         public IGenericRepository<Cinema> Cinemas { get; }
         public IGenericRepository<Producer> Producers { get; }
         public IGenericRepository<Movie> Movies { get; }
-        public IGenericRepository<AppUser> Users { get; }
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();

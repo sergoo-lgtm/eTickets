@@ -10,6 +10,6 @@ public interface IUnitOfWork
     IGenericRepository<Cinema> Cinemas { get; }
     IGenericRepository<Producer> Producers { get; }
     IGenericRepository<Movie> Movies { get; }
-    IGenericRepository<AppUser> Users { get; }
+   
         Task SaveChangesAsync();
 }

@@ -1,0 +1,670 @@
+2026-04-20 01:18:13.997 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-20 01:18:14.074 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND [o].[object_id] NOT IN (SELECT [ep].[major_id]
+        FROM [sys].[extended_properties] AS [ep]
+        WHERE [ep].[minor_id] = 0
+            AND [ep].[class] = 1
+            AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-20 01:18:14.253 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cinemas] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:14.268 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:14.277 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Producers] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:14.288 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Movies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:14.299 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors_Movies] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:14.324 +02:00 [INF] User profile is available. Using 'C:\Users\Yousef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-20 01:18:14.475 +02:00 [INF] Now listening on: https://localhost:7271
+2026-04-20 01:18:14.476 +02:00 [INF] Now listening on: http://localhost:5095
+2026-04-20 01:18:14.500 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-20 01:18:14.501 +02:00 [INF] Hosting environment: Development
+2026-04-20 01:18:14.502 +02:00 [INF] Content root path: D:\projects\E-ticketer\eTickets
+2026-04-20 01:18:15.067 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:15.209 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 147.5732ms
+2026-04-20 01:18:15.214 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:18.609 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:18.614 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 4.9366ms
+2026-04-20 01:18:18.617 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:20.135 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:20.140 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 4.9089ms
+2026-04-20 01:18:20.142 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:20.606 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:20.609 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 3.2921ms
+2026-04-20 01:18:20.612 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:20.760 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:20.763 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 2.8202ms
+2026-04-20 01:18:20.765 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:20.928 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:20.931 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 3.1209ms
+2026-04-20 01:18:20.934 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:49.322 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-20 01:18:49.374 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND [o].[object_id] NOT IN (SELECT [ep].[major_id]
+        FROM [sys].[extended_properties] AS [ep]
+        WHERE [ep].[minor_id] = 0
+            AND [ep].[class] = 1
+            AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-20 01:18:49.553 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cinemas] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:49.565 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:49.571 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Producers] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:49.579 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Movies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:49.587 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors_Movies] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 01:18:49.604 +02:00 [INF] User profile is available. Using 'C:\Users\Yousef\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-20 01:18:49.716 +02:00 [INF] Now listening on: https://localhost:7271
+2026-04-20 01:18:49.716 +02:00 [INF] Now listening on: http://localhost:5095
+2026-04-20 01:18:49.738 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-20 01:18:49.738 +02:00 [INF] Hosting environment: Development
+2026-04-20 01:18:49.739 +02:00 [INF] Content root path: D:\projects\E-ticketer\eTickets
+2026-04-20 01:18:50.200 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:50.303 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 107.8854ms
+2026-04-20 01:18:50.308 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:54.954 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:54.960 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 6.0896ms
+2026-04-20 01:18:54.962 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:55.456 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:55.460 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 4.6741ms
+2026-04-20 01:18:55.463 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:18:55.735 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/ - null null
+2026-04-20 01:18:55.738 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/ - 404 null null 3.3405ms
+2026-04-20 01:18:55.741 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/, Response status code: 404
+2026-04-20 01:20:15.997 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/swagger - null null
+2026-04-20 01:20:16.007 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/swagger - 404 null null 10.8059ms
+2026-04-20 01:20:16.011 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/swagger, Response status code: 404
+2026-04-20 01:20:49.372 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Movies - null null
+2026-04-20 01:20:49.379 +02:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:20:49.386 +02:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-20 01:20:49.569 +02:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CinemaId], [m].[Description], [m].[EndDate], [m].[ImageURL], [m].[MovieCategory], [m].[Name], [m].[Price], [m].[ProducerId], [m].[StartDate], [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+ORDER BY [m].[Name]
+2026-04-20 01:20:49.636 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-20 01:20:49.730 +02:00 [INF] Executed ViewResult - view Index executed in 93.3601ms.
+2026-04-20 01:20:49.734 +02:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 346.3658ms
+2026-04-20 01:20:49.736 +02:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:20:49.739 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - null null
+2026-04-20 01:20:49.739 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - null null
+2026-04-20 01:20:49.811 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/scoob.jpg - null null
+2026-04-20 01:20:49.739 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-20 01:20:49.739 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - null null
+2026-04-20 01:20:49.743 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/Ghost.jpg - null null
+2026-04-20 01:20:49.743 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/ColdSoles.jpg - null null
+2026-04-20 01:20:49.748 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/life.jpg - null null
+2026-04-20 01:20:49.811 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/Race.jpg - null null
+2026-04-20 01:20:49.812 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/TheShawshankRedemption.jpg - null null
+2026-04-20 01:20:49.813 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - null null
+2026-04-20 01:20:49.814 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Movies - 200 null text/html; charset=utf-8 442.1215ms
+2026-04-20 01:20:49.815 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.815 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.815 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.817 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.818 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.818 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.819 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.821 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.822 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.823 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.824 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.828 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-20 01:20:49.835 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.837 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\kun71cdkr9-{0}-bvn1d9cx59-bvn1d9cx59.gz'
+2026-04-20 01:20:49.837 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\03lwxah8rg-{0}-b9sayid5wm-b9sayid5wm.gz'
+2026-04-20 01:20:49.837 +02:00 [INF] Sending file. Request path: 'css/auth.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\ioc65xccw8-{0}-t7x38iyzp5-t7x38iyzp5.gz'
+2026-04-20 01:20:49.838 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.838 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-04-20 01:20:49.839 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.840 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - 200 1142 text/css 100.8027ms
+2026-04-20 01:20:49.845 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - 200 700 text/css 105.9921ms
+2026-04-20 01:20:49.876 +02:00 [INF] Sending file. Request path: 'images/movies/life.jpg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\movies\life.jpg'
+2026-04-20 01:20:49.842 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xza234c5zw-{0}-hd3gran6i8-hd3gran6i8.gz'
+2026-04-20 01:20:49.839 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_vs/browserLink - null null
+2026-04-20 01:20:49.839 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.842 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.876 +02:00 [INF] Sending file. Request path: 'images/movies/Ghost.jpg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\movies\Ghost.jpg'
+2026-04-20 01:20:49.842 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\0itnpipw0u-{0}-m9qm4tazc0-m9qm4tazc0.gz'
+2026-04-20 01:20:49.842 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\6ruk69gieq-{0}-43atpzeawx-43atpzeawx.gz'
+2026-04-20 01:20:49.839 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:20:49.907 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.907 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.909 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - 200 824 text/css 170.3422ms
+2026-04-20 01:20:49.911 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\1qr1nlk4we-{0}-xtxxf3hu2r-xtxxf3hu2r.gz'
+2026-04-20 01:20:49.911 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.912 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.913 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.908 +02:00 [INF] Sending file. Request path: 'images/movies/ColdSoles.jpg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\movies\ColdSoles.jpg'
+2026-04-20 01:20:49.876 +02:00 [INF] Sending file. Request path: 'images/movies/TheShawshankRedemption.jpg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\movies\TheShawshankRedemption.jpg'
+2026-04-20 01:20:49.906 +02:00 [INF] Sending file. Request path: 'images/movies/Race.jpg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\movies\Race.jpg'
+2026-04-20 01:20:49.917 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/life.jpg - 200 61455 image/jpeg 168.5952ms
+2026-04-20 01:20:49.918 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80770 text/javascript 89.7003ms
+2026-04-20 01:20:49.920 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 80.9565ms
+2026-04-20 01:20:49.921 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.921 +02:00 [INF] Sending file. Request path: 'images/movies/scoob.jpg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\movies\scoob.jpg'
+2026-04-20 01:20:49.921 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/Ghost.jpg - 200 25182 image/jpeg 178.4359ms
+2026-04-20 01:20:49.922 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - 200 87578 text/javascript 108.9979ms
+2026-04-20 01:20:49.923 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - 200 232876 text/css 184.2781ms
+2026-04-20 01:20:49.924 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.925 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.925 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.932 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 264 text/javascript 93.3055ms
+2026-04-20 01:20:49.932 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:49.938 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/ColdSoles.jpg - 200 958805 image/jpeg 194.9269ms
+2026-04-20 01:20:49.939 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/TheShawshankRedemption.jpg - 200 88665 image/jpeg 127.1399ms
+2026-04-20 01:20:49.939 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/Race.jpg - 200 463503 image/jpeg 158.6545ms
+2026-04-20 01:20:49.942 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/scoob.jpg - 200 2836664 image/jpeg 161.0949ms
+2026-04-20 01:20:49.944 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 104.8101ms
+2026-04-20 01:20:50.138 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/favicon.ico - null null
+2026-04-20 01:20:50.140 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:50.141 +02:00 [INF] Sending file. Request path: 'favicon.ico'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\2ubs55g8xs-{0}-61n19gt1b8-61n19gt1b8.gz'
+2026-04-20 01:20:50.142 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:50.143 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/favicon.ico - 200 5463 image/x-icon 4.4507ms
+2026-04-20 01:20:59.218 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Cinemas - null null
+2026-04-20 01:20:59.223 +02:00 [INF] Executing endpoint 'eTickets.Controllers.CinemasController.Index (eTickets)'
+2026-04-20 01:20:59.225 +02:00 [INF] Route matched with {action = "Index", controller = "Cinemas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.CinemasController (eTickets).
+2026-04-20 01:20:59.285 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Cinemas] AS [c]
+2026-04-20 01:20:59.288 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-20 01:20:59.301 +02:00 [INF] Executed ViewResult - view Index executed in 14.0151ms.
+2026-04-20 01:20:59.302 +02:00 [INF] Executed action eTickets.Controllers.CinemasController.Index (eTickets) in 76.1589ms
+2026-04-20 01:20:59.303 +02:00 [INF] Executed endpoint 'eTickets.Controllers.CinemasController.Index (eTickets)'
+2026-04-20 01:20:59.304 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Cinemas - 200 null text/html; charset=utf-8 85.8353ms
+2026-04-20 01:20:59.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-20 01:20:59.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - null null
+2026-04-20 01:20:59.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - null null
+2026-04-20 01:20:59.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - null null
+2026-04-20 01:20:59.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/32.jpeg - null null
+2026-04-20 01:20:59.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/2.png - null null
+2026-04-20 01:20:59.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/222.png - null null
+2026-04-20 01:20:59.336 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/qwww.jpeg - null null
+2026-04-20 01:20:59.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:20:59.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - null null
+2026-04-20 01:20:59.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-20 01:20:59.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-04-20 01:20:59.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_vs/browserLink - null null
+2026-04-20 01:20:59.340 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.340 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.354 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.357 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\03lwxah8rg-{0}-b9sayid5wm-b9sayid5wm.gz'
+2026-04-20 01:20:59.346 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.346 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.342 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.347 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.344 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.341 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.349 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 11.9196ms
+2026-04-20 01:20:59.357 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\1qr1nlk4we-{0}-xtxxf3hu2r-xtxxf3hu2r.gz'
+2026-04-20 01:20:59.358 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\6ruk69gieq-{0}-43atpzeawx-43atpzeawx.gz'
+2026-04-20 01:20:59.358 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.359 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.8645ms
+2026-04-20 01:20:59.359 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.359 +02:00 [INF] Sending file. Request path: 'images/cinemas/222.png'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\cinemas\222.png'
+2026-04-20 01:20:59.360 +02:00 [INF] Sending file. Request path: 'images/cinemas/2.png'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\cinemas\2.png'
+2026-04-20 01:20:59.361 +02:00 [INF] Sending file. Request path: 'css/auth.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\ioc65xccw8-{0}-t7x38iyzp5-t7x38iyzp5.gz'
+2026-04-20 01:20:59.362 +02:00 [INF] Sending file. Request path: 'images/cinemas/qwww.jpeg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\cinemas\qwww.jpeg'
+2026-04-20 01:20:59.362 +02:00 [INF] Sending file. Request path: 'images/cinemas/32.jpeg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\cinemas\32.jpeg'
+2026-04-20 01:20:59.363 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\kun71cdkr9-{0}-bvn1d9cx59-bvn1d9cx59.gz'
+2026-04-20 01:20:59.365 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.365 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.366 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - 200 700 text/css 46.5009ms
+2026-04-20 01:20:59.368 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\0itnpipw0u-{0}-m9qm4tazc0-m9qm4tazc0.gz'
+2026-04-20 01:20:59.369 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.369 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.370 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.371 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.372 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.372 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.373 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 264 text/javascript 36.5115ms
+2026-04-20 01:20:59.374 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - 200 232876 text/css 54.7016ms
+2026-04-20 01:20:59.377 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.377 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/222.png - 200 1831 image/png 57.668ms
+2026-04-20 01:20:59.378 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/2.png - 200 9043 image/png 58.2786ms
+2026-04-20 01:20:59.378 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - 200 824 text/css 58.8908ms
+2026-04-20 01:20:59.379 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/qwww.jpeg - 200 9510 image/jpeg 42.5859ms
+2026-04-20 01:20:59.380 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/32.jpeg - 200 11999 image/jpeg 60.2147ms
+2026-04-20 01:20:59.380 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - 200 1142 text/css 60.7862ms
+2026-04-20 01:20:59.384 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - 200 87578 text/javascript 47.6029ms
+2026-04-20 01:20:59.395 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.398 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xza234c5zw-{0}-hd3gran6i8-hd3gran6i8.gz'
+2026-04-20 01:20:59.399 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:20:59.399 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80770 text/javascript 62.645ms
+2026-04-20 01:21:00.849 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Actors - null null
+2026-04-20 01:21:00.853 +02:00 [INF] Executing endpoint 'eTickets.Controllers.ActorsController.Index (eTickets)'
+2026-04-20 01:21:00.855 +02:00 [INF] Route matched with {action = "Index", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.ActorsController (eTickets).
+2026-04-20 01:21:00.877 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Bio], [a].[FullName], [a].[ProfilePivture]
+FROM [Actors] AS [a]
+2026-04-20 01:21:00.885 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-20 01:21:00.895 +02:00 [INF] Executed ViewResult - view Index executed in 10.5993ms.
+2026-04-20 01:21:00.896 +02:00 [INF] Executed action eTickets.Controllers.ActorsController.Index (eTickets) in 40.4383ms
+2026-04-20 01:21:00.897 +02:00 [INF] Executed endpoint 'eTickets.Controllers.ActorsController.Index (eTickets)'
+2026-04-20 01:21:00.898 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Actors - 200 null text/html; charset=utf-8 48.9588ms
+2026-04-20 01:21:00.911 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-20 01:21:00.911 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - null null
+2026-04-20 01:21:00.911 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/actors/1.jpeg - null null
+2026-04-20 01:21:00.911 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - null null
+2026-04-20 01:21:00.911 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - null null
+2026-04-20 01:21:00.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - null null
+2026-04-20 01:21:00.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-20 01:21:00.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/actors/download (3).jpeg - null null
+2026-04-20 01:21:00.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/actors/download (1).jpeg - null null
+2026-04-20 01:21:00.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/actors/download (2).jpeg - null null
+2026-04-20 01:21:00.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:21:00.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-04-20 01:21:00.914 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.915 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.917 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/actors/1.jpeg - 404 0 null 5.9103ms
+2026-04-20 01:21:00.918 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.919 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.920 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.921 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.922 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.923 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.924 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_vs/browserLink - null null
+2026-04-20 01:21:00.927 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.934 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\0itnpipw0u-{0}-m9qm4tazc0-m9qm4tazc0.gz'
+2026-04-20 01:21:00.934 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xza234c5zw-{0}-hd3gran6i8-hd3gran6i8.gz'
+2026-04-20 01:21:00.937 +02:00 [INF] Sending file. Request path: 'images/actors/download (2).jpeg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\actors\download (2).jpeg'
+2026-04-20 01:21:00.934 +02:00 [INF] Sending file. Request path: 'images/actors/download (3).jpeg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\actors\download (3).jpeg'
+2026-04-20 01:21:00.933 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\6ruk69gieq-{0}-43atpzeawx-43atpzeawx.gz'
+2026-04-20 01:21:00.930 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7271/images/actors/1.jpeg, Response status code: 404
+2026-04-20 01:21:00.931 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\kun71cdkr9-{0}-bvn1d9cx59-bvn1d9cx59.gz'
+2026-04-20 01:21:00.931 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 18.8987ms
+2026-04-20 01:21:00.928 +02:00 [INF] Sending file. Request path: 'css/auth.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\ioc65xccw8-{0}-t7x38iyzp5-t7x38iyzp5.gz'
+2026-04-20 01:21:00.931 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\03lwxah8rg-{0}-b9sayid5wm-b9sayid5wm.gz'
+2026-04-20 01:21:00.935 +02:00 [INF] Sending file. Request path: 'images/actors/download (1).jpeg'. Physical path: 'D:\projects\E-ticketer\eTickets\wwwroot\images\actors\download (1).jpeg'
+2026-04-20 01:21:00.937 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\1qr1nlk4we-{0}-xtxxf3hu2r-xtxxf3hu2r.gz'
+2026-04-20 01:21:00.937 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.938 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.939 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.939 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.940 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.942 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.943 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.4099ms
+2026-04-20 01:21:00.944 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.945 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.946 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.946 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:00.947 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - 200 87578 text/javascript 35.4261ms
+2026-04-20 01:21:00.948 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80770 text/javascript 36.1547ms
+2026-04-20 01:21:00.948 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/actors/download (2).jpeg - 200 7189 image/jpeg 36.9476ms
+2026-04-20 01:21:00.949 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/actors/download (3).jpeg - 200 4866 image/jpeg 37.5536ms
+2026-04-20 01:21:00.950 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - 200 232876 text/css 38.5441ms
+2026-04-20 01:21:00.950 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - 200 1142 text/css 38.9656ms
+2026-04-20 01:21:00.952 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - 200 824 text/css 41.1152ms
+2026-04-20 01:21:00.953 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - 200 700 text/css 41.6859ms
+2026-04-20 01:21:00.953 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/actors/download (1).jpeg - 200 5765 image/jpeg 42.0815ms
+2026-04-20 01:21:00.954 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 264 text/javascript 42.194ms
+2026-04-20 01:21:02.505 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Cinemas - null null
+2026-04-20 01:21:02.508 +02:00 [INF] Executing endpoint 'eTickets.Controllers.CinemasController.Index (eTickets)'
+2026-04-20 01:21:02.508 +02:00 [INF] Route matched with {action = "Index", controller = "Cinemas"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.CinemasController (eTickets).
+2026-04-20 01:21:02.519 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Cinemas] AS [c]
+2026-04-20 01:21:02.520 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-20 01:21:02.524 +02:00 [INF] Executed ViewResult - view Index executed in 3.2199ms.
+2026-04-20 01:21:02.525 +02:00 [INF] Executed action eTickets.Controllers.CinemasController.Index (eTickets) in 15.5704ms
+2026-04-20 01:21:02.526 +02:00 [INF] Executed endpoint 'eTickets.Controllers.CinemasController.Index (eTickets)'
+2026-04-20 01:21:02.526 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Cinemas - 200 null text/html; charset=utf-8 21.3514ms
+2026-04-20 01:21:02.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-20 01:21:02.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - null null
+2026-04-20 01:21:02.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - null null
+2026-04-20 01:21:02.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/32.jpeg - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/2.png - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/222.png - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/cinemas/qwww.jpeg - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-04-20 01:21:02.541 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_vs/browserLink - null null
+2026-04-20 01:21:02.542 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.556 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.547 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.559 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\6ruk69gieq-{0}-43atpzeawx-43atpzeawx.gz'
+2026-04-20 01:21:02.552 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.548 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.549 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.553 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.546 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.554 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 13.1076ms
+2026-04-20 01:21:02.543 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.545 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.559 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\1qr1nlk4we-{0}-xtxxf3hu2r-xtxxf3hu2r.gz'
+2026-04-20 01:21:02.551 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.559 +02:00 [INF] The file images/cinemas/32.jpeg was not modified
+2026-04-20 01:21:02.560 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.560 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.5783ms
+2026-04-20 01:21:02.561 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\0itnpipw0u-{0}-m9qm4tazc0-m9qm4tazc0.gz'
+2026-04-20 01:21:02.562 +02:00 [INF] The file images/cinemas/2.png was not modified
+2026-04-20 01:21:02.562 +02:00 [INF] The file images/cinemas/222.png was not modified
+2026-04-20 01:21:02.563 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xza234c5zw-{0}-hd3gran6i8-hd3gran6i8.gz'
+2026-04-20 01:21:02.564 +02:00 [INF] Sending file. Request path: 'css/auth.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\ioc65xccw8-{0}-t7x38iyzp5-t7x38iyzp5.gz'
+2026-04-20 01:21:02.566 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\kun71cdkr9-{0}-bvn1d9cx59-bvn1d9cx59.gz'
+2026-04-20 01:21:02.567 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\03lwxah8rg-{0}-b9sayid5wm-b9sayid5wm.gz'
+2026-04-20 01:21:02.568 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.568 +02:00 [INF] The file images/cinemas/qwww.jpeg was not modified
+2026-04-20 01:21:02.569 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.570 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - 200 232876 text/css 29.4966ms
+2026-04-20 01:21:02.572 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.572 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.573 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.574 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.574 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.575 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.576 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.576 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 264 text/javascript 34.885ms
+2026-04-20 01:21:02.577 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:02.577 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/32.jpeg - 304 null image/jpeg 36.5605ms
+2026-04-20 01:21:02.580 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - 200 87578 text/javascript 38.2974ms
+2026-04-20 01:21:02.580 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/2.png - 304 null image/png 39.4774ms
+2026-04-20 01:21:02.581 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/222.png - 304 null image/png 40.1059ms
+2026-04-20 01:21:02.582 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80770 text/javascript 40.3657ms
+2026-04-20 01:21:02.582 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - 200 824 text/css 41.7214ms
+2026-04-20 01:21:02.583 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - 200 1142 text/css 42.4949ms
+2026-04-20 01:21:02.583 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - 200 700 text/css 43.0644ms
+2026-04-20 01:21:02.586 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/cinemas/qwww.jpeg - 304 null image/jpeg 44.592ms
+2026-04-20 01:21:03.281 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Movies - null null
+2026-04-20 01:21:03.283 +02:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:21:03.284 +02:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-20 01:21:03.296 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CinemaId], [m].[Description], [m].[EndDate], [m].[ImageURL], [m].[MovieCategory], [m].[Name], [m].[Price], [m].[ProducerId], [m].[StartDate], [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+ORDER BY [m].[Name]
+2026-04-20 01:21:03.298 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-20 01:21:03.300 +02:00 [INF] Executed ViewResult - view Index executed in 1.2896ms.
+2026-04-20 01:21:03.300 +02:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 15.5027ms
+2026-04-20 01:21:03.301 +02:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:21:03.302 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Movies - 200 null text/html; charset=utf-8 20.97ms
+2026-04-20 01:21:03.317 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/ColdSoles.jpg - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/Ghost.jpg - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/life.jpg - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/Race.jpg - null null
+2026-04-20 01:21:03.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/scoob.jpg - null null
+2026-04-20 01:21:03.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - null null
+2026-04-20 01:21:03.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:21:03.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-20 01:21:03.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-04-20 01:21:03.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/images/movies/TheShawshankRedemption.jpg - null null
+2026-04-20 01:21:03.319 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_vs/browserLink - null null
+2026-04-20 01:21:03.320 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.327 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.332 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 12.7731ms
+2026-04-20 01:21:03.333 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.328 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.342 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xza234c5zw-{0}-hd3gran6i8-hd3gran6i8.gz'
+2026-04-20 01:21:03.339 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.2886ms
+2026-04-20 01:21:03.338 +02:00 [INF] The file images/movies/life.jpg was not modified
+2026-04-20 01:21:03.339 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\6ruk69gieq-{0}-43atpzeawx-43atpzeawx.gz'
+2026-04-20 01:21:03.323 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.329 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.326 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.335 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.326 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.334 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.322 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.330 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.321 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.342 +02:00 [INF] The file images/movies/Race.jpg was not modified
+2026-04-20 01:21:03.343 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.345 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.345 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.346 +02:00 [INF] Sending file. Request path: 'css/auth.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\ioc65xccw8-{0}-t7x38iyzp5-t7x38iyzp5.gz'
+2026-04-20 01:21:03.346 +02:00 [INF] The file images/movies/scoob.jpg was not modified
+2026-04-20 01:21:03.348 +02:00 [INF] The file images/movies/Ghost.jpg was not modified
+2026-04-20 01:21:03.349 +02:00 [INF] The file images/movies/TheShawshankRedemption.jpg was not modified
+2026-04-20 01:21:03.349 +02:00 [INF] The file images/movies/ColdSoles.jpg was not modified
+2026-04-20 01:21:03.350 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\1qr1nlk4we-{0}-xtxxf3hu2r-xtxxf3hu2r.gz'
+2026-04-20 01:21:03.351 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\kun71cdkr9-{0}-bvn1d9cx59-bvn1d9cx59.gz'
+2026-04-20 01:21:03.352 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\03lwxah8rg-{0}-b9sayid5wm-b9sayid5wm.gz'
+2026-04-20 01:21:03.352 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.352 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80770 text/javascript 33.6974ms
+2026-04-20 01:21:03.353 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/life.jpg - 304 null image/jpeg 34.6048ms
+2026-04-20 01:21:03.353 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - 200 232876 text/css 36.1759ms
+2026-04-20 01:21:03.354 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.355 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.355 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.356 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.356 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.357 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.357 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.358 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.358 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/Race.jpg - 304 null image/jpeg 40.0341ms
+2026-04-20 01:21:03.360 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\0itnpipw0u-{0}-m9qm4tazc0-m9qm4tazc0.gz'
+2026-04-20 01:21:03.365 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - 200 824 text/css 46.886ms
+2026-04-20 01:21:03.365 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/scoob.jpg - 304 null image/jpeg 46.9804ms
+2026-04-20 01:21:03.366 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/Ghost.jpg - 304 null image/jpeg 47.6837ms
+2026-04-20 01:21:03.367 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/TheShawshankRedemption.jpg - 304 null image/jpeg 47.6135ms
+2026-04-20 01:21:03.367 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/images/movies/ColdSoles.jpg - 304 null image/jpeg 49.3344ms
+2026-04-20 01:21:03.368 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 264 text/javascript 49.1541ms
+2026-04-20 01:21:03.369 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - 200 1142 text/css 50.8738ms
+2026-04-20 01:21:03.369 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - 200 700 text/css 51.5128ms
+2026-04-20 01:21:03.371 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:03.386 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - 200 87578 text/javascript 67.1167ms
+2026-04-20 01:21:04.897 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Account/Login - null null
+2026-04-20 01:21:04.900 +02:00 [INF] Executing endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-20 01:21:04.901 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller eTickets.Controllers.AccountController (eTickets).
+2026-04-20 01:21:04.904 +02:00 [INF] Executing ViewResult, running view Login.
+2026-04-20 01:21:04.926 +02:00 [INF] Executed ViewResult - view Login executed in 22.2066ms.
+2026-04-20 01:21:04.927 +02:00 [INF] Executed action eTickets.Controllers.AccountController.Login (eTickets) in 24.2227ms
+2026-04-20 01:21:04.928 +02:00 [INF] Executed endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-20 01:21:04.928 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Account/Login - 200 null text/html; charset=utf-8 31.6793ms
+2026-04-20 01:21:04.942 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-20 01:21:04.942 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - null null
+2026-04-20 01:21:04.942 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - null null
+2026-04-20 01:21:04.942 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - null null
+2026-04-20 01:21:04.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - null null
+2026-04-20 01:21:04.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-04-20 01:21:04.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-20 01:21:04.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-04-20 01:21:04.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js - null null
+2026-04-20 01:21:04.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:21:04.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_vs/browserLink - null null
+2026-04-20 01:21:04.944 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.946 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.949 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.961 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\6ruk69gieq-{0}-43atpzeawx-43atpzeawx.gz'
+2026-04-20 01:21:04.956 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 13.169ms
+2026-04-20 01:21:04.955 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.954 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.952 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.950 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.948 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.951 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.961 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\03lwxah8rg-{0}-b9sayid5wm-b9sayid5wm.gz'
+2026-04-20 01:21:04.961 +02:00 [INF] Sending file. Request path: 'css/auth.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\ioc65xccw8-{0}-t7x38iyzp5-t7x38iyzp5.gz'
+2026-04-20 01:21:04.962 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.6698ms
+2026-04-20 01:21:04.962 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.965 +02:00 [INF] Sending file. Request path: 'lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\m740hlvw7h-{0}-48y08845bh-48y08845bh.gz'
+2026-04-20 01:21:04.965 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\1qr1nlk4we-{0}-xtxxf3hu2r-xtxxf3hu2r.gz'
+2026-04-20 01:21:04.966 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xza234c5zw-{0}-hd3gran6i8-hd3gran6i8.gz'
+2026-04-20 01:21:04.967 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\0itnpipw0u-{0}-m9qm4tazc0-m9qm4tazc0.gz'
+2026-04-20 01:21:04.968 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\kun71cdkr9-{0}-bvn1d9cx59-bvn1d9cx59.gz'
+2026-04-20 01:21:04.968 +02:00 [INF] Sending file. Request path: 'lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xc28fk20j5-{0}-gk0pw8i4co-gk0pw8i4co.gz'
+2026-04-20 01:21:04.969 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.970 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.972 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - 200 232876 text/css 29.5146ms
+2026-04-20 01:21:04.972 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.973 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.974 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.974 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.975 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.976 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:04.976 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - 200 700 text/css 34.1405ms
+2026-04-20 01:21:04.977 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - 200 824 text/css 34.3604ms
+2026-04-20 01:21:04.979 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js - 200 5864 text/javascript 36.3187ms
+2026-04-20 01:21:04.980 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 264 text/javascript 37.2652ms
+2026-04-20 01:21:04.981 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80770 text/javascript 38.1064ms
+2026-04-20 01:21:04.981 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - 200 87578 text/javascript 38.8049ms
+2026-04-20 01:21:04.982 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - 200 1142 text/css 39.8182ms
+2026-04-20 01:21:04.983 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery-validation/dist/jquery.validate.min.js - 200 25344 text/javascript 40.1003ms
+2026-04-20 01:21:05.712 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Movies - null null
+2026-04-20 01:21:05.715 +02:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:21:05.715 +02:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-20 01:21:05.726 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CinemaId], [m].[Description], [m].[EndDate], [m].[ImageURL], [m].[MovieCategory], [m].[Name], [m].[Price], [m].[ProducerId], [m].[StartDate], [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+ORDER BY [m].[Name]
+2026-04-20 01:21:05.728 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-20 01:21:05.730 +02:00 [INF] Executed ViewResult - view Index executed in 1.5909ms.
+2026-04-20 01:21:05.731 +02:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 14.1968ms
+2026-04-20 01:21:05.732 +02:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:21:05.733 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Movies - 200 null text/html; charset=utf-8 20.6004ms
+2026-04-20 01:21:05.745 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:21:05.747 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 1.9295ms
+2026-04-20 01:21:06.281 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Account/Register - null null
+2026-04-20 01:21:06.284 +02:00 [INF] Executing endpoint 'eTickets.Controllers.AccountController.Register (eTickets)'
+2026-04-20 01:21:06.285 +02:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller eTickets.Controllers.AccountController (eTickets).
+2026-04-20 01:21:06.287 +02:00 [INF] Executing ViewResult, running view Register.
+2026-04-20 01:21:06.296 +02:00 [INF] Executed ViewResult - view Register executed in 9.4472ms.
+2026-04-20 01:21:06.297 +02:00 [INF] Executed action eTickets.Controllers.AccountController.Register (eTickets) in 10.7413ms
+2026-04-20 01:21:06.298 +02:00 [INF] Executed endpoint 'eTickets.Controllers.AccountController.Register (eTickets)'
+2026-04-20 01:21:06.299 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Account/Register - 200 null text/html; charset=utf-8 18.3421ms
+2026-04-20 01:21:06.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-04-20 01:21:06.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - null null
+2026-04-20 01:21:06.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - null null
+2026-04-20 01:21:06.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - null null
+2026-04-20 01:21:06.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - null null
+2026-04-20 01:21:06.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-04-20 01:21:06.312 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-04-20 01:21:06.312 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-04-20 01:21:06.312 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:21:06.312 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js - null null
+2026-04-20 01:21:06.312 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_vs/browserLink - null null
+2026-04-20 01:21:06.313 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.320 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.318 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.317 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.329 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.314 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.316 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.321 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.328 +02:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.328 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\6ruk69gieq-{0}-43atpzeawx-43atpzeawx.gz'
+2026-04-20 01:21:06.328 +02:00 [INF] Sending file. Request path: 'lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xza234c5zw-{0}-hd3gran6i8-hd3gran6i8.gz'
+2026-04-20 01:21:06.328 +02:00 [INF] Sending file. Request path: 'lib/jquery/dist/jquery.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\0itnpipw0u-{0}-m9qm4tazc0-m9qm4tazc0.gz'
+2026-04-20 01:21:06.329 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.6597ms
+2026-04-20 01:21:06.323 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 11.6813ms
+2026-04-20 01:21:06.329 +02:00 [INF] Sending file. Request path: 'css/auth.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\ioc65xccw8-{0}-t7x38iyzp5-t7x38iyzp5.gz'
+2026-04-20 01:21:06.330 +02:00 [INF] Sending file. Request path: 'lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\m740hlvw7h-{0}-48y08845bh-48y08845bh.gz'
+2026-04-20 01:21:06.331 +02:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\03lwxah8rg-{0}-b9sayid5wm-b9sayid5wm.gz'
+2026-04-20 01:21:06.332 +02:00 [INF] Sending file. Request path: 'eTickets.styles.css'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\kun71cdkr9-{0}-bvn1d9cx59-bvn1d9cx59.gz'
+2026-04-20 01:21:06.332 +02:00 [INF] Sending file. Request path: 'js/site.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\1qr1nlk4we-{0}-xtxxf3hu2r-xtxxf3hu2r.gz'
+2026-04-20 01:21:06.333 +02:00 [INF] Sending file. Request path: 'lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'D:\projects\E-ticketer\eTickets\obj\Debug\net10.0\compressed\xc28fk20j5-{0}-gk0pw8i4co-gk0pw8i4co.gz'
+2026-04-20 01:21:06.334 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.334 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.335 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.339 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.339 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.340 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.341 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.341 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.342 +02:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2026-04-20 01:21:06.342 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/css/bootstrap.min.css - 200 232876 text/css 31.5582ms
+2026-04-20 01:21:06.343 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 80770 text/javascript 31.7282ms
+2026-04-20 01:21:06.344 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery/dist/jquery.min.js - 200 87578 text/javascript 32.443ms
+2026-04-20 01:21:06.344 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/auth.css?v=6TrPMmzXi4ZJ2RWG2OYYjLtzJzplzzvJFEeAhIfSAAk - 200 824 text/css 33.4507ms
+2026-04-20 01:21:06.345 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js - 200 5864 text/javascript 33.4914ms
+2026-04-20 01:21:06.346 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/css/site.css?v=j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg - 200 700 text/css 34.6979ms
+2026-04-20 01:21:06.346 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/eTickets.styles.css?v=FyBisXROe-dsPNROYhJaZff5H3e5tOIPWpPH2fsgyhw - 200 1142 text/css 35.4301ms
+2026-04-20 01:21:06.347 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 264 text/javascript 35.732ms
+2026-04-20 01:21:06.348 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/lib/jquery-validation/dist/jquery.validate.min.js - 200 25344 text/javascript 36.4039ms
+2026-04-20 01:21:06.777 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/Movies - null null
+2026-04-20 01:21:06.779 +02:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:21:06.780 +02:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-20 01:21:06.789 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CinemaId], [m].[Description], [m].[EndDate], [m].[ImageURL], [m].[MovieCategory], [m].[Name], [m].[Price], [m].[ProducerId], [m].[StartDate], [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+ORDER BY [m].[Name]
+2026-04-20 01:21:06.791 +02:00 [INF] Executing ViewResult, running view Index.
+2026-04-20 01:21:06.792 +02:00 [INF] Executed ViewResult - view Index executed in 1.1032ms.
+2026-04-20 01:21:06.793 +02:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 11.9348ms
+2026-04-20 01:21:06.794 +02:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-20 01:21:06.795 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/Movies - 200 null text/html; charset=utf-8 17.7477ms
+2026-04-20 01:21:06.808 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 01:21:06.810 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7271/_framework/aspnetcore-browser-refresh.js - 200 14921 application/javascript; charset=utf-8 1.9926ms

@@ -1,10 +1,13 @@
 using eTickets.Data;
-using eTickets.UnitOfWork;
+using eTickets.Middlewares;
+using eTickets.Models.IdentityEntities;
 using eTickets.Service;
-using eTickets.Middlewares; 
+using eTickets.UnitOfWork;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Serilog; 
-using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,20 +25,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ActorService>();
-builder.Services.AddScoped<AccountService>();
-builder.Services.AddControllersWithViews();
 
-
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Account/Login";  
-        options.LogoutPath = "/Account/Logout";  
-        options.AccessDeniedPath = "/Account/AccessDenied";
-
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); 
-        options.SlidingExpiration = true;
-    });
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 
 
 
@@ -58,7 +51,7 @@ app.UseStaticFiles();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Movies}/{action=Index}/{id?}");
 
 AppDbInitializer.Seed(app);
 

@@ -1,9 +1,10 @@
 using eTickets.Models;
+using eTickets.Models.IdentityEntities;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace eTickets.Data;
 
-public class AppDbContext:DbContext
+public class AppDbContext:IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options): base(options)
     {
@@ -30,6 +31,5 @@ public class AppDbContext:DbContext
     public DbSet<Actor_Movie> Actors_Movies { get; set; }
     public DbSet<Cinema> Cinemas { get; set; }
     public DbSet<Producer> Producers { get; set; }
-    public DbSet<AppUser> Users { get; set; }
 
 }
