@@ -1,0 +1,608 @@
+2026-04-27 01:48:39.287 +03:00 [INF] User profile is available. Using '/Users/yousef/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-27 01:49:20.730 +03:00 [INF] User profile is available. Using '/Users/yousef/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-27 01:49:21.348 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-27 01:49:21.392 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND [o].[object_id] NOT IN (SELECT [ep].[major_id]
+        FROM [sys].[extended_properties] AS [ep]
+        WHERE [ep].[minor_id] = 0
+            AND [ep].[class] = 1
+            AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-27 01:49:21.539 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cinemas] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:49:21.548 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:49:21.554 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Producers] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:49:21.561 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Movies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:49:21.566 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors_Movies] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:49:21.661 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-04-27 01:49:21.701 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-04-27 01:49:21.703 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-04-27 01:49:21.725 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:49:21.793 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-04-27 01:49:21.845 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-04-27 01:49:21.856 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:49:21.899 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-04-27 01:49:21.902 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-04-27 01:49:21.904 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:49:21.946 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-04-27 01:49:21.948 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-04-27 01:49:21.982 +03:00 [INF] Now listening on: http://localhost:5095
+2026-04-27 01:49:21.983 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 01:49:21.983 +03:00 [INF] Hosting environment: Development
+2026-04-27 01:49:21.983 +03:00 [INF] Content root path: /Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets
+2026-04-27 01:49:22.254 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Movies - null null
+2026-04-27 01:49:22.257 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-04-27 01:49:22.274 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:49:22.280 +03:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:49:22.285 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:49:22.333 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [CinemaName], [p].[FullName] AS [ProducerName]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+ORDER BY [m].[Name]
+2026-04-27 01:49:22.340 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 52.8235ms.
+2026-04-27 01:49:22.346 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:49:22.476 +03:00 [INF] Executed ViewResult - view Index executed in 129.7222ms.
+2026-04-27 01:49:22.477 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 197.3733ms
+2026-04-27 01:49:22.478 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:49:22.487 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Movies - 200 null text/html; charset=utf-8 233.6247ms
+2026-04-27 01:49:22.492 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/eTickets.styles.css?v=jkamfmf9-L5C0EuQawfRWp-Bk_98XEWAAeNB0_5tyCI - null null
+2026-04-27 01:49:22.492 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/site.css?v=IbT0whtzrZBwB2zkSNzIOEja05OlYfYz0mUnZ2PAqa8 - null null
+2026-04-27 01:49:22.494 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/css/auth.css?v=3zK9LZ4lj0OVDzF7iYnJKYTFDdAdpBE-y2O0YG4S7Js - null null
+2026-04-27 01:49:22.495 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/ColdSoles.jpg - null null
+2026-04-27 01:49:22.495 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/Ghost.jpg - null null
+2026-04-27 01:49:22.495 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/life.jpg - null null
+2026-04-27 01:49:22.496 +03:00 [INF] The file /images/movies/Ghost.jpg was not modified
+2026-04-27 01:49:22.496 +03:00 [INF] The file /eTickets.styles.css was not modified
+2026-04-27 01:49:22.496 +03:00 [INF] The file /css/site.css was not modified
+2026-04-27 01:49:22.496 +03:00 [INF] The file /images/movies/ColdSoles.jpg was not modified
+2026-04-27 01:49:22.496 +03:00 [INF] The file /css/auth.css was not modified
+2026-04-27 01:49:22.496 +03:00 [INF] The file /images/movies/life.jpg was not modified
+2026-04-27 01:49:22.497 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/auth.css?v=3zK9LZ4lj0OVDzF7iYnJKYTFDdAdpBE-y2O0YG4S7Js - 304 null text/css 2.8027ms
+2026-04-27 01:49:22.496 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/eTickets.styles.css?v=jkamfmf9-L5C0EuQawfRWp-Bk_98XEWAAeNB0_5tyCI - 304 null text/css 4.1951ms
+2026-04-27 01:49:22.496 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/Ghost.jpg - 304 null image/jpeg 1.229ms
+2026-04-27 01:49:22.497 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/ColdSoles.jpg - 304 null image/jpeg 1.7393ms
+2026-04-27 01:49:22.496 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/css/site.css?v=IbT0whtzrZBwB2zkSNzIOEja05OlYfYz0mUnZ2PAqa8 - 304 null text/css 4.2171ms
+2026-04-27 01:49:22.497 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/life.jpg - 304 null image/jpeg 1.2592ms
+2026-04-27 01:49:22.499 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/scoob.jpg - null null
+2026-04-27 01:49:22.499 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/Race.jpg - null null
+2026-04-27 01:49:22.500 +03:00 [INF] The file /images/movies/Race.jpg was not modified
+2026-04-27 01:49:22.500 +03:00 [INF] The file /images/movies/scoob.jpg was not modified
+2026-04-27 01:49:22.501 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/Race.jpg - 304 null image/jpeg 1.3724ms
+2026-04-27 01:49:22.501 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/movies/TheShawshankRedemption.jpg - null null
+2026-04-27 01:49:22.501 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/scoob.jpg - 304 null image/jpeg 1.9953ms
+2026-04-27 01:49:22.502 +03:00 [INF] The file /images/movies/TheShawshankRedemption.jpg was not modified
+2026-04-27 01:49:22.503 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/movies/TheShawshankRedemption.jpg - 304 null image/jpeg 1.3754ms
+2026-04-27 01:50:39.910 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Cinemas - null null
+2026-04-27 01:50:39.925 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-27 01:50:39.929 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-27 01:50:39.930 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Cinemas - 302 0 null 19.8864ms
+2026-04-27 01:50:39.938 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Account/Login?ReturnUrl=%2FCinemas - null null
+2026-04-27 01:50:39.941 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Account/Login?ReturnUrl=%2FCinemas - 404 0 null 3.1759ms
+2026-04-27 01:50:39.942 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/Account/Login, Response status code: 404
+2026-04-27 01:50:48.807 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Producers - null null
+2026-04-27 01:50:48.809 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ProducersController.Index (eTickets)'
+2026-04-27 01:50:48.832 +03:00 [INF] Route matched with {action = "Index", controller = "Producers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.ProducersController (eTickets).
+2026-04-27 01:50:48.837 +03:00 [INF] Executing action method eTickets.Controllers.ProducersController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:50:48.906 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Bio], [p].[FullName], [p].[ProfilePictureURL]
+FROM [Producers] AS [p]
+2026-04-27 01:50:48.916 +03:00 [INF] Executed action method eTickets.Controllers.ProducersController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 77.9305ms.
+2026-04-27 01:50:48.916 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:50:48.931 +03:00 [INF] Executed ViewResult - view Index executed in 15.5572ms.
+2026-04-27 01:50:48.932 +03:00 [INF] Executed action eTickets.Controllers.ProducersController.Index (eTickets) in 98.9538ms
+2026-04-27 01:50:48.932 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ProducersController.Index (eTickets)'
+2026-04-27 01:50:48.932 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Producers - 200 null text/html; charset=utf-8 124.7052ms
+2026-04-27 01:50:48.947 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/producers/images.jpeg - null null
+2026-04-27 01:50:48.947 +03:00 [INF] The file /images/producers/images.jpeg was not modified
+2026-04-27 01:50:48.947 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/producers/images.jpeg - 304 null image/jpeg 0.401ms
+2026-04-27 01:50:48.947 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/producers/Will-Packer-Producer.jpg - null null
+2026-04-27 01:50:48.947 +03:00 [INF] The file /images/producers/Will-Packer-Producer.jpg was not modified
+2026-04-27 01:50:48.948 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/producers/Will-Packer-Producer.jpg - 304 null image/jpeg 0.5953ms
+2026-04-27 01:50:50.525 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Cinemas - null null
+2026-04-27 01:50:50.529 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-27 01:50:50.529 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-27 01:50:50.530 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Cinemas - 302 0 null 4.2579ms
+2026-04-27 01:50:50.531 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Account/Login?ReturnUrl=%2FCinemas - null null
+2026-04-27 01:50:50.532 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Account/Login?ReturnUrl=%2FCinemas - 404 0 null 1.0191ms
+2026-04-27 01:50:50.533 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/Account/Login, Response status code: 404
+2026-04-27 01:50:53.673 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Actors - null null
+2026-04-27 01:50:53.676 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ActorsController.Index (eTickets)'
+2026-04-27 01:50:53.682 +03:00 [INF] Route matched with {action = "Index", controller = "Actors"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.ActorsController (eTickets).
+2026-04-27 01:50:53.689 +03:00 [INF] Executing action method eTickets.Controllers.ActorsController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:50:53.718 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Bio], [a].[FullName], [a].[ProfilePivture]
+FROM [Actors] AS [a]
+2026-04-27 01:50:53.731 +03:00 [INF] Executed action method eTickets.Controllers.ActorsController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 40.7568ms.
+2026-04-27 01:50:53.732 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:50:53.751 +03:00 [INF] Executed ViewResult - view Index executed in 19.6097ms.
+2026-04-27 01:50:53.751 +03:00 [INF] Executed action eTickets.Controllers.ActorsController.Index (eTickets) in 67.6594ms
+2026-04-27 01:50:53.751 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ActorsController.Index (eTickets)'
+2026-04-27 01:50:53.751 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Actors - 200 null text/html; charset=utf-8 78.4682ms
+2026-04-27 01:50:53.759 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/actors/1.jpeg - null null
+2026-04-27 01:50:53.760 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/actors/1.jpeg - 404 0 null 1.1015ms
+2026-04-27 01:50:53.760 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/images/actors/1.jpeg, Response status code: 404
+2026-04-27 01:50:53.761 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/actors/download (3).jpeg - null null
+2026-04-27 01:50:53.761 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/actors/download (2).jpeg - null null
+2026-04-27 01:50:53.761 +03:00 [INF] The file /images/actors/download (3).jpeg was not modified
+2026-04-27 01:50:53.761 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/actors/download (3).jpeg - 304 null image/jpeg 0.3145ms
+2026-04-27 01:50:53.761 +03:00 [INF] The file /images/actors/download (2).jpeg was not modified
+2026-04-27 01:50:53.762 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/actors/download (2).jpeg - 304 null image/jpeg 0.9654ms
+2026-04-27 01:50:53.761 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/actors/download (1).jpeg - null null
+2026-04-27 01:50:53.763 +03:00 [INF] The file /images/actors/download (1).jpeg was not modified
+2026-04-27 01:50:53.763 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/actors/download (1).jpeg - 304 null image/jpeg 1.8147ms
+2026-04-27 01:50:56.322 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Producers - null null
+2026-04-27 01:50:56.324 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ProducersController.Index (eTickets)'
+2026-04-27 01:50:56.324 +03:00 [INF] Route matched with {action = "Index", controller = "Producers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.ProducersController (eTickets).
+2026-04-27 01:50:56.327 +03:00 [INF] Executing action method eTickets.Controllers.ProducersController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:50:56.336 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Bio], [p].[FullName], [p].[ProfilePictureURL]
+FROM [Producers] AS [p]
+2026-04-27 01:50:56.339 +03:00 [INF] Executed action method eTickets.Controllers.ProducersController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 10.2925ms.
+2026-04-27 01:50:56.340 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:50:56.354 +03:00 [INF] Executed ViewResult - view Index executed in 15.0255ms.
+2026-04-27 01:50:56.355 +03:00 [INF] Executed action eTickets.Controllers.ProducersController.Index (eTickets) in 29.8071ms
+2026-04-27 01:50:56.355 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ProducersController.Index (eTickets)'
+2026-04-27 01:50:56.356 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Producers - 200 null text/html; charset=utf-8 33.1577ms
+2026-04-27 01:51:10.283 +03:00 [INF] Application is shutting down...
+2026-04-27 01:51:11.471 +03:00 [INF] User profile is available. Using '/Users/yousef/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-27 01:51:12.757 +03:00 [INF] User profile is available. Using '/Users/yousef/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-27 01:51:13.311 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-27 01:51:13.331 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND [o].[object_id] NOT IN (SELECT [ep].[major_id]
+        FROM [sys].[extended_properties] AS [ep]
+        WHERE [ep].[minor_id] = 0
+            AND [ep].[class] = 1
+            AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-27 01:51:13.473 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Cinemas] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:51:13.479 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:51:13.481 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Producers] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:51:13.485 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Movies] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:51:13.489 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Actors_Movies] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 01:51:13.560 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-04-27 01:51:13.603 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-04-27 01:51:13.606 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-04-27 01:51:13.616 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:51:13.681 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-04-27 01:51:13.717 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-04-27 01:51:13.728 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:51:13.774 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-04-27 01:51:13.776 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-04-27 01:51:13.778 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:51:13.819 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-04-27 01:51:13.821 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Guid), @p1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-04-27 01:51:13.852 +03:00 [INF] Now listening on: http://localhost:5095
+2026-04-27 01:51:13.853 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 01:51:13.854 +03:00 [INF] Hosting environment: Development
+2026-04-27 01:51:13.854 +03:00 [INF] Content root path: /Users/yousef/My-Repos/eTicketsMVC/eTickets/eTickets
+2026-04-27 01:51:14.279 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Movies - null null
+2026-04-27 01:51:14.282 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-04-27 01:51:14.305 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:51:14.311 +03:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:51:14.316 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:51:14.358 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [CinemaName], [p].[FullName] AS [ProducerName]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+ORDER BY [m].[Name]
+2026-04-27 01:51:14.364 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 45.2424ms.
+2026-04-27 01:51:14.372 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:51:14.507 +03:00 [INF] Executed ViewResult - view Index executed in 135.2184ms.
+2026-04-27 01:51:14.508 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 196.3861ms
+2026-04-27 01:51:14.508 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:51:14.524 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Movies - 200 null text/html; charset=utf-8 245.744ms
+2026-04-27 01:51:17.636 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Cinemas - null null
+2026-04-27 01:51:17.644 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-27 01:51:17.647 +03:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-27 01:51:17.647 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Cinemas - 302 0 null 10.8792ms
+2026-04-27 01:51:17.649 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Account/Login?ReturnUrl=%2FCinemas - null null
+2026-04-27 01:51:17.652 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Account/Login?ReturnUrl=%2FCinemas - 404 0 null 3.316ms
+2026-04-27 01:51:17.653 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5095/Account/Login, Response status code: 404
+2026-04-27 01:51:24.333 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Login - null null
+2026-04-27 01:51:24.334 +03:00 [INF] Executing endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-27 01:51:24.337 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller eTickets.Controllers.AccountController (eTickets).
+2026-04-27 01:51:24.343 +03:00 [INF] Executing action method eTickets.Controllers.AccountController.Login (eTickets) - Validation state: "Valid"
+2026-04-27 01:51:24.343 +03:00 [INF] Executed action method eTickets.Controllers.AccountController.Login (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1318ms.
+2026-04-27 01:51:24.344 +03:00 [INF] Executing ViewResult, running view Login.
+2026-04-27 01:51:24.418 +03:00 [INF] Executed ViewResult - view Login executed in 75.0294ms.
+2026-04-27 01:51:24.418 +03:00 [INF] Executed action eTickets.Controllers.AccountController.Login (eTickets) in 80.9358ms
+2026-04-27 01:51:24.419 +03:00 [INF] Executed endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-27 01:51:24.419 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Login - 200 null text/html; charset=utf-8 85.986ms
+2026-04-27 01:52:07.892 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/Login - application/x-www-form-urlencoded 233
+2026-04-27 01:52:07.894 +03:00 [INF] Executing endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-27 01:52:07.915 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(eTickets.DTO.LoginDTO) on controller eTickets.Controllers.AccountController (eTickets).
+2026-04-27 01:52:07.948 +03:00 [INF] Executing action method eTickets.Controllers.AccountController.Login (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:07.996 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:52:07.997 +03:00 [INF] Executed action method eTickets.Controllers.AccountController.Login (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 48.5653ms.
+2026-04-27 01:52:07.997 +03:00 [INF] Executing ViewResult, running view Login.
+2026-04-27 01:52:08.000 +03:00 [INF] Executed ViewResult - view Login executed in 2.6981ms.
+2026-04-27 01:52:08.000 +03:00 [INF] Executed action eTickets.Controllers.AccountController.Login (eTickets) in 85.2208ms
+2026-04-27 01:52:08.000 +03:00 [INF] Executed endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-27 01:52:08.001 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/Login - 200 null text/html; charset=utf-8 108.207ms
+2026-04-27 01:52:24.594 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/Login - application/x-www-form-urlencoded 233
+2026-04-27 01:52:24.595 +03:00 [INF] Executing endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-27 01:52:24.596 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(eTickets.DTO.LoginDTO) on controller eTickets.Controllers.AccountController (eTickets).
+2026-04-27 01:52:24.610 +03:00 [INF] Executing action method eTickets.Controllers.AccountController.Login (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:24.621 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-04-27 01:52:24.665 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-04-27 01:52:24.748 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@user_Id='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @user_Id
+2026-04-27 01:52:24.773 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@userId='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-04-27 01:52:24.776 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-04-27 01:52:24.781 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@role_Id='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @role_Id
+2026-04-27 01:52:24.786 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-04-27 01:52:24.787 +03:00 [INF] Executed action method eTickets.Controllers.AccountController.Login (eTickets), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 176.2311ms.
+2026-04-27 01:52:24.787 +03:00 [INF] Executing RedirectResult, redirecting to /.
+2026-04-27 01:52:24.788 +03:00 [INF] Executed action eTickets.Controllers.AccountController.Login (eTickets) in 191.3073ms
+2026-04-27 01:52:24.788 +03:00 [INF] Executed endpoint 'eTickets.Controllers.AccountController.Login (eTickets)'
+2026-04-27 01:52:24.788 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/Login - 302 0 null 193.4696ms
+2026-04-27 01:52:24.790 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-04-27 01:52:24.791 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:24.792 +03:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:52:24.792 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:24.795 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [CinemaName], [p].[FullName] AS [ProducerName]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+ORDER BY [m].[Name]
+2026-04-27 01:52:24.795 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.4682ms.
+2026-04-27 01:52:24.795 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:24.798 +03:00 [INF] Executed ViewResult - view Index executed in 2.5928ms.
+2026-04-27 01:52:24.798 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 6.4696ms
+2026-04-27 01:52:24.798 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:24.798 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 7.934ms
+2026-04-27 01:52:30.872 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Cinemas - null null
+2026-04-27 01:52:30.883 +03:00 [INF] Executing endpoint 'eTickets.Controllers.CinemasController.Index (eTickets)'
+2026-04-27 01:52:30.895 +03:00 [INF] Route matched with {action = "Index", controller = "Cinemas"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.CinemasController (eTickets).
+2026-04-27 01:52:30.897 +03:00 [INF] Executing action method eTickets.Controllers.CinemasController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:30.914 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Description], [c].[Logo], [c].[Name]
+FROM [Cinemas] AS [c]
+2026-04-27 01:52:30.929 +03:00 [INF] Executed action method eTickets.Controllers.CinemasController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 32.0076ms.
+2026-04-27 01:52:30.930 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:30.945 +03:00 [INF] Executed ViewResult - view Index executed in 16.0255ms.
+2026-04-27 01:52:30.945 +03:00 [INF] Executed action eTickets.Controllers.CinemasController.Index (eTickets) in 49.718ms
+2026-04-27 01:52:30.945 +03:00 [INF] Executed endpoint 'eTickets.Controllers.CinemasController.Index (eTickets)'
+2026-04-27 01:52:30.946 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Cinemas - 200 null text/html; charset=utf-8 74.0254ms
+2026-04-27 01:52:30.953 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/cinemas/32.jpeg - null null
+2026-04-27 01:52:30.955 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/cinemas/2.png - null null
+2026-04-27 01:52:30.955 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/cinemas/222.png - null null
+2026-04-27 01:52:30.957 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/images/cinemas/qwww.jpeg - null null
+2026-04-27 01:52:30.959 +03:00 [INF] The file /images/cinemas/222.png was not modified
+2026-04-27 01:52:30.959 +03:00 [INF] The file /images/cinemas/32.jpeg was not modified
+2026-04-27 01:52:30.959 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/cinemas/222.png - 304 null image/png 3.7083ms
+2026-04-27 01:52:30.959 +03:00 [INF] The file /images/cinemas/qwww.jpeg was not modified
+2026-04-27 01:52:30.959 +03:00 [INF] The file /images/cinemas/2.png was not modified
+2026-04-27 01:52:30.960 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/cinemas/2.png - 304 null image/png 4.9186ms
+2026-04-27 01:52:30.960 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/cinemas/qwww.jpeg - 304 null image/jpeg 2.6009ms
+2026-04-27 01:52:30.959 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/images/cinemas/32.jpeg - 304 null image/jpeg 5.6817ms
+2026-04-27 01:52:38.169 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Producers - null null
+2026-04-27 01:52:38.174 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ProducersController.Index (eTickets)'
+2026-04-27 01:52:38.188 +03:00 [INF] Route matched with {action = "Index", controller = "Producers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.ProducersController (eTickets).
+2026-04-27 01:52:38.189 +03:00 [INF] Executing action method eTickets.Controllers.ProducersController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:38.204 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Bio], [p].[FullName], [p].[ProfilePictureURL]
+FROM [Producers] AS [p]
+2026-04-27 01:52:38.215 +03:00 [INF] Executed action method eTickets.Controllers.ProducersController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 25.5977ms.
+2026-04-27 01:52:38.216 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:38.234 +03:00 [INF] Executed ViewResult - view Index executed in 18.3607ms.
+2026-04-27 01:52:38.234 +03:00 [INF] Executed action eTickets.Controllers.ProducersController.Index (eTickets) in 46.0019ms
+2026-04-27 01:52:38.234 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ProducersController.Index (eTickets)'
+2026-04-27 01:52:38.234 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Producers - 200 null text/html; charset=utf-8 65.129ms
+2026-04-27 01:52:41.054 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-04-27 01:52:41.056 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:41.056 +03:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:52:41.058 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:41.069 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [CinemaName], [p].[FullName] AS [ProducerName]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+ORDER BY [m].[Name]
+2026-04-27 01:52:41.070 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 11.5791ms.
+2026-04-27 01:52:41.071 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:41.074 +03:00 [INF] Executed ViewResult - view Index executed in 2.8804ms.
+2026-04-27 01:52:41.074 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 17.551ms
+2026-04-27 01:52:41.074 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:41.074 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 20.6246ms
+2026-04-27 01:52:43.460 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/ShoppingCart/AddToCart/6 - application/x-www-form-urlencoded 239
+2026-04-27 01:52:43.464 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ShoppingCartController.AddToCart (eTickets)'
+2026-04-27 01:52:43.472 +03:00 [INF] Route matched with {action = "AddToCart", controller = "ShoppingCart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddToCart(Int32, System.String) on controller eTickets.Controllers.ShoppingCartController (eTickets).
+2026-04-27 01:52:43.474 +03:00 [INF] Executing action method eTickets.Controllers.ShoppingCartController.AddToCart (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:43.487 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@movieId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[Name], [m].[ImageURL], [m].[Price]
+FROM [Movies] AS [m]
+WHERE [m].[Id] = @movieId
+2026-04-27 01:52:43.512 +03:00 [INF] Executed action method eTickets.Controllers.ShoppingCartController.AddToCart (eTickets), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 37.4568ms.
+2026-04-27 01:52:43.512 +03:00 [INF] Executing RedirectResult, redirecting to /.
+2026-04-27 01:52:43.513 +03:00 [INF] Executed action eTickets.Controllers.ShoppingCartController.AddToCart (eTickets) in 40.1551ms
+2026-04-27 01:52:43.513 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ShoppingCartController.AddToCart (eTickets)'
+2026-04-27 01:52:43.514 +03:00 [INF] Session started; Key:62a1de41-22b0-99b5-53b2-73cbbbe659e1, Id:a6980408-d5cb-589b-fc13-e74b317f0e16
+2026-04-27 01:52:43.515 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/ShoppingCart/AddToCart/6 - 302 0 null 54.9458ms
+2026-04-27 01:52:43.517 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-04-27 01:52:43.518 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:43.518 +03:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:52:43.518 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:43.522 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [CinemaName], [p].[FullName] AS [ProducerName]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+ORDER BY [m].[Name]
+2026-04-27 01:52:43.523 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.7117ms.
+2026-04-27 01:52:43.523 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:43.525 +03:00 [INF] Executed ViewResult - view Index executed in 2.4866ms.
+2026-04-27 01:52:43.525 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 7.4468ms
+2026-04-27 01:52:43.525 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:43.525 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 8.3326ms
+2026-04-27 01:52:47.432 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/ShoppingCart/AddToCart/3 - application/x-www-form-urlencoded 239
+2026-04-27 01:52:47.434 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ShoppingCartController.AddToCart (eTickets)'
+2026-04-27 01:52:47.435 +03:00 [INF] Route matched with {action = "AddToCart", controller = "ShoppingCart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddToCart(Int32, System.String) on controller eTickets.Controllers.ShoppingCartController (eTickets).
+2026-04-27 01:52:47.436 +03:00 [INF] Executing action method eTickets.Controllers.ShoppingCartController.AddToCart (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:47.446 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@movieId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[Name], [m].[ImageURL], [m].[Price]
+FROM [Movies] AS [m]
+WHERE [m].[Id] = @movieId
+2026-04-27 01:52:47.448 +03:00 [INF] Executed action method eTickets.Controllers.ShoppingCartController.AddToCart (eTickets), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 11.4052ms.
+2026-04-27 01:52:47.448 +03:00 [INF] Executing RedirectResult, redirecting to /.
+2026-04-27 01:52:47.449 +03:00 [INF] Executed action eTickets.Controllers.ShoppingCartController.AddToCart (eTickets) in 13.6337ms
+2026-04-27 01:52:47.449 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ShoppingCartController.AddToCart (eTickets)'
+2026-04-27 01:52:47.450 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/ShoppingCart/AddToCart/3 - 302 0 null 18.7596ms
+2026-04-27 01:52:47.453 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-04-27 01:52:47.454 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:47.454 +03:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:52:47.454 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:47.460 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [CinemaName], [p].[FullName] AS [ProducerName]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+ORDER BY [m].[Name]
+2026-04-27 01:52:47.461 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.1371ms.
+2026-04-27 01:52:47.461 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:47.462 +03:00 [INF] Executed ViewResult - view Index executed in 1.3007ms.
+2026-04-27 01:52:47.462 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 8.1156ms
+2026-04-27 01:52:47.463 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:47.463 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 10.1969ms
+2026-04-27 01:52:49.009 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5095/ShoppingCart/AddToCart/1 - application/x-www-form-urlencoded 239
+2026-04-27 01:52:49.010 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ShoppingCartController.AddToCart (eTickets)'
+2026-04-27 01:52:49.010 +03:00 [INF] Route matched with {action = "AddToCart", controller = "ShoppingCart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddToCart(Int32, System.String) on controller eTickets.Controllers.ShoppingCartController (eTickets).
+2026-04-27 01:52:49.011 +03:00 [INF] Executing action method eTickets.Controllers.ShoppingCartController.AddToCart (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:49.016 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@movieId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[Name], [m].[ImageURL], [m].[Price]
+FROM [Movies] AS [m]
+WHERE [m].[Id] = @movieId
+2026-04-27 01:52:49.017 +03:00 [INF] Executed action method eTickets.Controllers.ShoppingCartController.AddToCart (eTickets), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 6.1415ms.
+2026-04-27 01:52:49.017 +03:00 [INF] Executing RedirectResult, redirecting to /.
+2026-04-27 01:52:49.018 +03:00 [INF] Executed action eTickets.Controllers.ShoppingCartController.AddToCart (eTickets) in 7.3799ms
+2026-04-27 01:52:49.018 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ShoppingCartController.AddToCart (eTickets)'
+2026-04-27 01:52:49.018 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5095/ShoppingCart/AddToCart/1 - 302 0 null 9.3567ms
+2026-04-27 01:52:49.020 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ - null null
+2026-04-27 01:52:49.021 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:49.021 +03:00 [INF] Route matched with {action = "Index", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:52:49.021 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:49.024 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [CinemaName], [p].[FullName] AS [ProducerName]
+FROM [Movies] AS [m]
+INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+ORDER BY [m].[Name]
+2026-04-27 01:52:49.025 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.7205ms.
+2026-04-27 01:52:49.025 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:49.026 +03:00 [INF] Executed ViewResult - view Index executed in 0.8425ms.
+2026-04-27 01:52:49.026 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Index (eTickets) in 4.9363ms
+2026-04-27 01:52:49.026 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Index (eTickets)'
+2026-04-27 01:52:49.026 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ - 200 null text/html; charset=utf-8 6.0357ms
+2026-04-27 01:52:52.134 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/Movies/Details/1 - null null
+2026-04-27 01:52:52.136 +03:00 [INF] Executing endpoint 'eTickets.Controllers.MoviesController.Details (eTickets)'
+2026-04-27 01:52:52.145 +03:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller eTickets.Controllers.MoviesController (eTickets).
+2026-04-27 01:52:52.145 +03:00 [INF] Executing action method eTickets.Controllers.MoviesController.Details (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:52.218 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Description], [s].[StartDate], [s].[EndDate], [s].[Price], [s].[ImageURL], [s].[MovieCategory], [s].[Name0], [s].[FullName], [s].[Id0], [s].[Id1], [s0].[FullName], [s0].[ActorId], [s0].[MovieId], [s0].[Id]
+FROM (
+    SELECT TOP(1) [m].[Id], [m].[Name], [m].[Description], [m].[StartDate], [m].[EndDate], [m].[Price], [m].[ImageURL], [m].[MovieCategory], [c].[Name] AS [Name0], [p].[FullName], [c].[Id] AS [Id0], [p].[Id] AS [Id1]
+    FROM [Movies] AS [m]
+    INNER JOIN [Cinemas] AS [c] ON [m].[CinemaId] = [c].[Id]
+    INNER JOIN [Producers] AS [p] ON [m].[ProducerId] = [p].[Id]
+    WHERE [m].[Id] = @id
+) AS [s]
+LEFT JOIN (
+    SELECT [a0].[FullName], [a].[ActorId], [a].[MovieId], [a0].[Id]
+    FROM [Actors_Movies] AS [a]
+    INNER JOIN [Actors] AS [a0] ON [a].[ActorId] = [a0].[Id]
+) AS [s0] ON [s].[Id] = [s0].[MovieId]
+ORDER BY [s].[Id], [s].[Id0], [s].[Id1], [s0].[FullName], [s0].[ActorId], [s0].[MovieId]
+2026-04-27 01:52:52.220 +03:00 [INF] Executed action method eTickets.Controllers.MoviesController.Details (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 74.7869ms.
+2026-04-27 01:52:52.221 +03:00 [INF] Executing ViewResult, running view Details.
+2026-04-27 01:52:52.229 +03:00 [INF] Executed ViewResult - view Details executed in 7.9252ms.
+2026-04-27 01:52:52.229 +03:00 [INF] Executed action eTickets.Controllers.MoviesController.Details (eTickets) in 83.8199ms
+2026-04-27 01:52:52.229 +03:00 [INF] Executed endpoint 'eTickets.Controllers.MoviesController.Details (eTickets)'
+2026-04-27 01:52:52.229 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/Movies/Details/1 - 200 null text/html; charset=utf-8 94.7686ms
+2026-04-27 01:52:56.266 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5095/ShoppingCart - null null
+2026-04-27 01:52:56.268 +03:00 [INF] Executing endpoint 'eTickets.Controllers.ShoppingCartController.Index (eTickets)'
+2026-04-27 01:52:56.270 +03:00 [INF] Route matched with {action = "Index", controller = "ShoppingCart"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller eTickets.Controllers.ShoppingCartController (eTickets).
+2026-04-27 01:52:56.270 +03:00 [INF] Executing action method eTickets.Controllers.ShoppingCartController.Index (eTickets) - Validation state: "Valid"
+2026-04-27 01:52:56.274 +03:00 [INF] Executed action method eTickets.Controllers.ShoppingCartController.Index (eTickets), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.7808ms.
+2026-04-27 01:52:56.275 +03:00 [INF] Executing ViewResult, running view Index.
+2026-04-27 01:52:56.288 +03:00 [INF] Executed ViewResult - view Index executed in 13.7337ms.
+2026-04-27 01:52:56.288 +03:00 [INF] Executed action eTickets.Controllers.ShoppingCartController.Index (eTickets) in 18.2472ms
+2026-04-27 01:52:56.288 +03:00 [INF] Executed endpoint 'eTickets.Controllers.ShoppingCartController.Index (eTickets)'
+2026-04-27 01:52:56.288 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5095/ShoppingCart - 200 null text/html; charset=utf-8 22.7888ms
+2026-04-27 01:56:56.246 +03:00 [INF] Application is shutting down...

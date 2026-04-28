@@ -47,4 +47,29 @@ public class ActorsController : Controller
         var actor = await _service.GetActorAsync(id); 
         return View(actor);
     }
+    public async Task<IActionResult> Edit(int id)
+    {
+        var actor = await _service.GetActorAsync(id);
+        return View(actor);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, ActorInputDto actorDto)
+    {
+        if (!ModelState.IsValid) return View(actorDto);
+
+        await _service.UpdateAsync(id, actorDto);
+        return RedirectToAction(nameof(Index));
+    }
+    public async Task<IActionResult> Delete(int id)
+    {
+        var actor = await _service.GetActorAsync(id);
+        return View(actor);
+    }
+    [HttpPost, ActionName("Delete")]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        await _service.DeleteAsync(id);
+        return RedirectToAction(nameof(Index));
+    }
 }

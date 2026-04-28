@@ -1,19 +1,24 @@
 using eTickets.Models;
+using eTickets.Models.IdentityEntities;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace eTickets.Data
 {
     public class AppDbInitializer
     {
-        public static void Seed(IApplicationBuilder applicationBuilder)
+        public static async Task SeedAsync(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
                 context.Database.EnsureCreated();
 
@@ -28,7 +33,7 @@ namespace eTickets.Data
                         new Cinema("Cinema 4", "/images/cinemas/222.png", "This is the description of the fourth cinema"),
                         new Cinema("Cinema 5", "/images/cinemas/qwww.jpeg", "This is the description of the fifth cinema")
                     });
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
 
                 // 2. Actors
@@ -42,7 +47,7 @@ namespace eTickets.Data
                         new Actor("Actor 4", "/images/actors/download (3).jpeg", "This is the Bio of the fourth actor"),
                         new Actor("Actor 5", "/images/actors/download (2).jpeg", "This is the Bio of the fifth actor")
                     });
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
 
                 // 3. Producers
@@ -56,7 +61,7 @@ namespace eTickets.Data
                         new Producer("Producer 4", "images/producers/images.jpeg", "This is the Bio of the fourth producer"),
                         new Producer("Producer 5", "images/producers/Will-Packer-Producer.jpg", "This is the Bio of the fifth producer")
                     });
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
 
                 // 4. Movies
@@ -71,7 +76,7 @@ namespace eTickets.Data
                         new Movie("Scoob", "This is the Scoob movie description", DateTime.Now.AddDays(-10), DateTime.Now.AddDays(-2), 39.50, "/images/movies/scoob.jpg", MovieCategory.Cartoon, 1, 3),
                         new Movie("Cold Soles", "This is the Cold Soles movie description", DateTime.Now.AddDays(3), DateTime.Now.AddDays(20), 39.50, "/images/movies/ColdSoles.jpg", MovieCategory.Drama, 1, 5)
                     });
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
 
                 // 5. Actors & Movies
@@ -97,8 +102,131 @@ namespace eTickets.Data
                         new Actor_Movie(6, 4),
                         new Actor_Movie(6, 5)
                     });
-                    context.SaveChanges();
+                    await context.SaveChangesAsync();
                 }
+
+                await SeedUsersAndRolesAsync(userManager, roleManager);
+            }
+        }
+
+        public static async Task SeedUsersAndRolesAsync(
+            UserManager<ApplicationUser> userManager,
+            RoleManager<ApplicationRole> roleManager)
+        {
+            var roles = new[] { "Admin", "Editor", "User" };
+
+            foreach (var roleName in roles)
+            {
+                if (!await roleManager.RoleExistsAsync(roleName))
+                {
+                    await roleManager.CreateAsync(new ApplicationRole
+                    {
+                        Name = roleName
+                    });
+                }
+            }
+
+            await CreateUserAsync(
+                userManager,
+                email: "admin@admin.com",
+                userName: "admin@admin.com", // خليناه زي الإيميل
+                personName: "Admin User",
+                role: "Admin");
+
+            await CreateUserAsync(
+                userManager,
+                email: "editor@editor.com",
+                userName: "editor@editor.com", // خليناه زي الإيميل
+                personName: "Editor User",
+                role: "Editor");
+
+            await CreateUserAsync(
+                userManager,
+                email: "user@user.com",
+                userName: "user@user.com", // خليناه زي الإيميل
+                personName: "Standard User",
+                role: "User");
+        }
+
+        private static async Task CreateUserAsync(
+            UserManager<ApplicationUser> userManager,
+            string email,
+            string userName,
+            string personName,
+            string role)
+        {
+            const string seedPassword = "aA11111111#S@";
+            var existingUser = await userManager.FindByEmailAsync(email);
+
+            if (existingUser == null)
+            {
+                var user = new ApplicationUser
+                {
+                    Email = email,
+                    UserName = userName,
+                    PersonName = personName,
+                    EmailConfirmed = true
+                };
+
+                var result = await userManager.CreateAsync(user, seedPassword);
+
+                if (!result.Succeeded)
+                {
+                    var errors = string.Join(", ", result.Errors.Select(error => error.Description));
+                    throw new InvalidOperationException($"Failed to create seed user '{email}': {errors}");
+                }
+
+                existingUser = user;
+            }
+            else
+            {
+                var requiresUpdate = false;
+
+                if (existingUser.UserName != userName)
+                {
+                    existingUser.UserName = userName;
+                    requiresUpdate = true;
+                }
+
+                if (existingUser.PersonName != personName)
+                {
+                    existingUser.PersonName = personName;
+                    requiresUpdate = true;
+                }
+
+                if (!existingUser.EmailConfirmed)
+                {
+                    existingUser.EmailConfirmed = true;
+                    requiresUpdate = true;
+                }
+
+                if (requiresUpdate)
+                {
+                    var updateResult = await userManager.UpdateAsync(existingUser);
+                    if (!updateResult.Succeeded)
+                    {
+                        var errors = string.Join(", ", updateResult.Errors.Select(error => error.Description));
+                        throw new InvalidOperationException($"Failed to update seed user '{email}': {errors}");
+                    }
+                }
+
+                var hasExpectedPassword = await userManager.CheckPasswordAsync(existingUser, seedPassword);
+                if (!hasExpectedPassword)
+                {
+                    var resetToken = await userManager.GeneratePasswordResetTokenAsync(existingUser);
+                    var resetResult = await userManager.ResetPasswordAsync(existingUser, resetToken, seedPassword);
+
+                    if (!resetResult.Succeeded)
+                    {
+                        var errors = string.Join(", ", resetResult.Errors.Select(error => error.Description));
+                        throw new InvalidOperationException($"Failed to reset password for seed user '{email}': {errors}");
+                    }
+                }
+            }
+
+            if (!await userManager.IsInRoleAsync(existingUser, role))
+            {
+                await userManager.AddToRoleAsync(existingUser, role);
             }
         }
     }

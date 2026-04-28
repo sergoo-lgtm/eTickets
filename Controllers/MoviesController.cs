@@ -1,20 +1,33 @@
-using eTickets.Data;
+using eTickets.Service;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Controllers;
 
 public class MoviesController : Controller
 {
-    private readonly AppDbContext context;
-    public MoviesController(AppDbContext context)
+    private readonly MovieService _service;
+
+    public MoviesController(MovieService service)
     {
-        this.context = context; 
-        
+        _service = service;
     }
-    public IActionResult Index()
+
+    public async Task<IActionResult> Index()
     {
-        var movies = context.Movies.Include(n=>n.Cinema).OrderBy(n=>n.Name).ToList();
+        var movies = await _service.GetAllMoviesAsync();
         return View(movies);
+    }
+
+    public async Task<IActionResult> Details(int id)
+    {
+        try
+        {
+            var movie = await _service.GetMovieDetailsAsync(id);
+            return View(movie);
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound();
+        }
     }
 }

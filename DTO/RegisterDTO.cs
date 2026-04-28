@@ -12,7 +12,7 @@ namespace eTickets.DTO
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Phone number is required")]
-        [RegularExpression(@"^\d{10}$", ErrorMessage = "Invalid phone number")]
+        [RegularExpression(@"^\d{11}$", ErrorMessage = "Invalid phone number")]
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
